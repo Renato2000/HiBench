@@ -346,6 +346,32 @@ function gen_heatmap_options(suffix, title, yAxis_desc, colorAxis_desc, series_d
 				 pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.hostname}.{point.coreid}<br/><b>{point.value:%.2f} %</b>'
 			     }});
 
+
+	gen_heatmap_options("energy_heatmap", "Energy usage heatmap", 
+				{
+				title: {
+					text: null
+				},
+				labels: {
+					formatter: function (){
+					return 'Node-'+this.value;
+					}
+				},
+				minPadding: 0,
+				maxPadding: 0,
+				startOnTick: false,
+				endOnTick: false,
+				tickWidth: 1,
+				min: 0,
+				},
+				{labels:{format: '{value}'}},
+				{name : 'Energy usage',
+				tooltip:{
+				headerFormat: 'Energy usage<br/>',
+				pointFormatter: function () {
+					return Highcharts.dateFormat("%Y-%m-%d %H:%M:%S",this.x)+'<br/>'+this.hostname+'<br/><b>'+this.value.fileSize()+'</b>';}
+				}});
+
 	// generate network throughputs heatmap
 	gen_heatmap_options("network_heatmap", "Network throughputs heatmap", 
 			    {
@@ -479,6 +505,23 @@ function gen_heatmap_options(suffix, title, yAxis_desc, colorAxis_desc, series_d
 			    	type: 'area',
 			    }
 			   );
+
+	// load energy overall
+	gen_overall_options("energy_overall", "Summarized Energy", 
+				[{	// yaxis for loads
+					title: {
+						text: 'Energy (Joule/s)'
+					},
+					tooltip: {
+						pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y:0.2f}</b>)<br/>',
+					}
+				}], 
+					{	// plot options
+					},
+					events,
+					{	// chart type
+					}
+				);
 
 	// load network overall
 	gen_overall_options("network_overall", "Summarized Network throughputs & Packet-per-seconds", 
@@ -614,6 +657,9 @@ function gen_heatmap_options(suffix, title, yAxis_desc, colorAxis_desc, series_d
     
     <div id="container_cpu_heatmap" style="height: 800px; max-width: 1000px; margin: 0 auto"></div>
     <div id="container_cpu_overall" style="height: 400px; max-width: 1000px; margin: 0 auto"></div>
+
+    <div id="container_energy_heatmap" style="height: 800px; max-width: 1000px; margin: 0 auto"></div>
+	<div id="container_energy_overall" style="height: 400px; max-width: 1000px; margin: 0 auto"></div>
     
     <div id="container_network_heatmap" style="height: 800px; max-width: 1000px; margin: 0 auto"></div>
     <div id="container_network_overall" style="height: 400px; max-width: 1000px; margin: 0 auto"></div>
@@ -629,6 +675,8 @@ function gen_heatmap_options(suffix, title, yAxis_desc, colorAxis_desc, series_d
 
     <pre id="csv_cpu_heatmap" style="display: none">{cpu_heatmap}</pre>
     <pre id="csv_cpu_overall" style="display: none">{cpu_overall}</pre>
+    <pre id="csv_energy_heatmap" style="display: none">{energy_heatmap}</pre>
+	<pre id="csv_energy_overall" style="display: none">{energy_overall}</pre>
     <pre id="csv_network_heatmap" style="display: none">{network_heatmap}</pre>
     <pre id="csv_network_overall" style="display: none">{network_overall}</pre>
     <pre id="csv_diskio_heatmap" style="display: none">{diskio_heatmap}</pre>

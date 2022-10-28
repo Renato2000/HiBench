@@ -1,0 +1,9 @@
+---
+- name: Stop powerjoular
+  hosts: workers
+  remote_user: gsd
+  
+  tasks:
+  - name: stop powerjoular
+    become: yes
+    shell: sudo pkill powerjoular

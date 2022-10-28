@@ -609,6 +609,8 @@ def generate_report(workload_title, log_fn, benchlog_fn, report_fn):
     # Generating CSVs
     cpu_heatmap = ["x,y,value,hostname,coreid"]
     cpu_overall = ["x,idle,user,system,iowait,others"]
+    energy_heatmap = ["x,y,value,hostname"]
+    energy_overall = ["x,value"]
     network_heatmap = ["x,y,value,hostname,adapterid"]
     network_overall = ["x,recv_bytes,send_bytes,|recv_packets,send_packets,errors"]
     diskio_heatmap = ["x,y,value,hostname,diskid"]
@@ -791,7 +793,15 @@ def generate_report(workload_title, log_fn, benchlog_fn, report_fn):
                                                value = y.send_bytes / PROBE_INTERVAL,
                                                host  = x['hostname'], 
                                                networkid = y.label+".send"))
-        
+    
+    energy_data = open(samedir("energy/energy.csv"))
+    for energy_data_line in energy_data.readlines():
+        energy_heatmap.append(energy_data_line.replace("\n", ""))
+
+    energy_overall_data = open(samedir("energy/overall.csv"))
+    for energy_overall_data_line in energy_overall_data.readlines():
+        energy_overall.append(energy_overall_data_line.replace("\n", ""))
+
     with open(samedir("chart-template.html")) as f:
         template = f.read()
     

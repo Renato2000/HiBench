@@ -1,0 +1,15 @@
+---
+- name: Start powerjoular
+  hosts: workers
+  remote_user: gsd
+  
+  tasks:
+  - name: Remove energy file
+    become: yes
+    ansible.builtin.file:
+      path: /home/gsd/energy.csv
+      state: absent
+
+  - name: run powerjoular on background
+    become: yes
+    shell: nohup powerjoular -f energy.csv &
