@@ -4,9 +4,10 @@ import sys
 from datetime import datetime
 
 current_dir = sys.argv[1]
+dest_dir = sys.argv[2]
 
-energy_heatmap_file = open(current_dir + '/energy.csv', 'w')
-energy_overall_file = open(current_dir + '/overall.csv', 'w')
+energy_heatmap_file = open(dest_dir + '/energy.csv', 'w')
+energy_overall_file = open(dest_dir + '/overall.csv', 'w')
 
 hosts = []
 
