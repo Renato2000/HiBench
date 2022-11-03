@@ -863,3 +863,4 @@ if __name__=="__main__":
         na.stop()
         generate_report(workload_title, log_path, bench_log_path, report_path)
 
+

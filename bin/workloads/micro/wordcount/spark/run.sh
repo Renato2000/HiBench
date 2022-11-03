@@ -32,7 +32,7 @@ START_TIME=`timestamp`
 run_spark_job com.intel.hibench.sparkbench.micro.ScalaWordCount $INPUT_HDFS $OUTPUT_HDFS
 END_TIME=`timestamp`
 ansible-playbook ${energy_dir}/stop_powerjoular.yml -i ${energy_dir}/hosts.inv > /dev/null
-bash ${energy_dir}/gen_energy_results.sh
+. ${energy_dir}/gen_energy_results.sh
 TOTAL_ENERGY=0
 
 gen_report ${START_TIME} ${END_TIME} ${SIZE} ${TOTAL_ENERGY}

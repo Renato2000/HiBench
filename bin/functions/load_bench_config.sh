@@ -23,4 +23,3 @@ this="$bin/$script"
 # include function interfaces for workload
 . ${bin}/workload_functions.sh
 
-
