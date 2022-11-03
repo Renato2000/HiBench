@@ -17,11 +17,14 @@ for energy_overall_data_line in energy_overall_data.readlines():
 def my_replace(match):
     match = match.group()[1:-1]
     if match.endswith('heatmap') or match.endswith('overall'):
-        return "\n".join(energy_data)
+        return "\n".join(energy_heatmap)
     elif match =='events':
         return "\n".join(energy_overall)
     else:
         return '{%s}' % match
-        
+       
+with open(monitor_path + "monitor.html") as f:
+    monitor_file = f.read()
+
 with open(monitor_path + "/monitor_energy.html", 'w') as f:
-    f.write(re.sub(r'{\w+}', my_replace, monitor_path + "/monitor.html"))
+    f.write(re.sub(r'{\w+}', my_replace, monitor_file))
