@@ -793,7 +793,7 @@ def generate_report(workload_title, log_fn, benchlog_fn, report_fn):
                                                value = y.send_bytes / PROBE_INTERVAL,
                                                host  = x['hostname'], 
                                                networkid = y.label+".send"))
-    
+
     energy_data = open(samedir("energy/energy.csv"))
     for energy_data_line in energy_data.readlines():
         energy_heatmap.append(energy_data_line.replace("\n", ""))
@@ -862,3 +862,4 @@ if __name__=="__main__":
         signal.signal(signal.SIGTERM, signal.SIG_IGN)
         na.stop()
         generate_report(workload_title, log_path, bench_log_path, report_path)
+

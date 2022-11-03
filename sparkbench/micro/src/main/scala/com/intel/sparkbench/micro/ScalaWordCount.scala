@@ -33,6 +33,7 @@ object ScalaWordCount{
     }
     val sparkConf = new SparkConf().setAppName("ScalaWordCount")
     val sc = new SparkContext(sparkConf)
+    sc.setLocalProperty("spark.scheduler.pool", "fair_pool")
 
     val io = new IOCommon(sc)
     val data = io.load[String](args(0))

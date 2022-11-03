@@ -214,7 +214,7 @@ function run_spark_job() {
        fi
     fi
     if [[ "$CLS" == *.py ]]; then 
-        LIB_JARS="$LIB_JARS --jars ${SPARKBENCH_JAR}"
+	LIB_JARS="$LIB_JARS --jars ${SPARKBENCH_JAR}"
         SUBMIT_CMD="${SPARK_HOME}/bin/spark-submit ${LIB_JARS} --properties-file ${SPARK_PROP_CONF} --master ${SPARK_MASTER} ${YARN_OPTS} ${CLS} $@"
     else
         SUBMIT_CMD="${SPARK_HOME}/bin/spark-submit ${LIB_JARS} --properties-file ${SPARK_PROP_CONF} --class ${CLS} --master ${SPARK_MASTER} ${YARN_OPTS} ${SPARKBENCH_JAR} $@"

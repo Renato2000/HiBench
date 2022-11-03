@@ -77,10 +77,13 @@ for host in hosts:
         index = last + 5000
         if index not in results:
             results[index] = {}
+        value = round(acc / valid, 5)
+        if value < 0: 
+            value = 0
         results[index][host] = {
             'time': str(index),
             'hostno': str(hostno),
-            'value': str(round(acc / valid, 5)),
+            'value': str(value),
             'host': host
         }
         acc = 0
