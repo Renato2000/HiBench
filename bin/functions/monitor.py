@@ -43,8 +43,6 @@ entered=False
 def sig_term_handler(signo, stack):
     global entered
     global log_path
-    global energy_path
-    global energy_overall_path
     global report_path
     global workload_title
     global bench_log_path
@@ -55,7 +53,7 @@ def sig_term_handler(signo, stack):
     else: return
 
     na.stop()
-    generate_report(workload_title, log_path, energy_path, energy_overall_path, bench_log_path, report_path)
+    generate_report(workload_title, log_path, bench_log_path, report_path)
     sys.exit(0)
 
 def samedir(fn):
@@ -600,7 +598,7 @@ def parse_bench_log(benchlog_fn):
             i += 1
         return events
 
-def generate_report(workload_title, log_fn, energy_path, energy_overall_path, benchlog_fn, report_fn):
+def generate_report(workload_title, log_fn, benchlog_fn, report_fn):
     c =- 1
     with open(log_fn) as f:
         datas=[eval(x) for x in f.readlines()]
@@ -611,8 +609,6 @@ def generate_report(workload_title, log_fn, energy_path, energy_overall_path, be
     # Generating CSVs
     cpu_heatmap = ["x,y,value,hostname,coreid"]
     cpu_overall = ["x,idle,user,system,iowait,others"]
-    energy_heatmap = ["x,y,value,hostname"]
-    energy_overall = ["x,value"]
     network_heatmap = ["x,y,value,hostname,adapterid"]
     network_overall = ["x,recv_bytes,send_bytes,|recv_packets,send_packets,errors"]
     diskio_heatmap = ["x,y,value,hostname,diskid"]
@@ -796,14 +792,6 @@ def generate_report(workload_title, log_fn, energy_path, energy_overall_path, be
                                                host  = x['hostname'], 
                                                networkid = y.label+".send"))
 
-    energy_data = open(energy_path)
-    for energy_data_line in energy_data.readlines():
-        energy_heatmap.append(energy_data_line.replace("\n", ""))
-
-    energy_overall_data = open(energy_overall_path)
-    for energy_overall_data_line in energy_overall_data.readlines():
-        energy_overall.append(energy_overall_data_line.replace("\n", ""))
-
     with open(samedir("chart-template.html")) as f:
         template = f.read()
     
@@ -845,11 +833,9 @@ if __name__=="__main__":
     workload_title = sys.argv[1]
     parent_pid = sys.argv[2]
     log_path = sys.argv[3]
-    energy_path = sys.argv[4]
-    energy_overall_path = sys.argv[5]
-    bench_log_path = sys.argv[6]
-    report_path = sys.argv[7]
-    nodes_to_monitor = sys.argv[8:]
+    bench_log_path = sys.argv[4]
+    report_path = sys.argv[5]
+    nodes_to_monitor = sys.argv[6:]
     pid=os.fork()
     if pid:                               #parent
         print pid
@@ -865,6 +851,6 @@ if __name__=="__main__":
         # parent lost, stop!
         signal.signal(signal.SIGTERM, signal.SIG_IGN)
         na.stop()
-        generate_report(workload_title, log_path, energy_path, energy_overall_path, bench_log_path, report_path)
+        generate_report(workload_title, log_path, bench_log_path, report_path)
 
 

@@ -14,5 +14,4 @@ for WORKER in $WORKERS; do
 done
 
 echo gen_energy_result PID: $$ > /dev/stderr
-python3 ${energy_dir}/parse_files.py ${energy_dir} ${WORKLOAD_RESULT_FOLDER}
-cp ${WORKLOAD_RESULT_FOLDER}/energy.csv ${WORKLOAD_RESULT_FOLDER}/overall.csv ${energy_dir}
+python3 ${energy_dir}/parse_files.py ${energy_dir}
