@@ -18,7 +18,8 @@ for line in f.readlines():
     if index != 0:
         l = line.split(",")
         energy = float(l[2])
-        total += energy
+        if energy > 0:
+            total += energy
     index += 1
 
 print(round(total, 4))
