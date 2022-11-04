@@ -13,5 +13,4 @@ for WORKER in $WORKERS; do
     scp $WORKER:~/energy.csv ${energy_dir}/energy_$WORKER.csv
 done
 
-echo gen_energy_result PID: $$ > /dev/stderr
 python3 ${energy_dir}/parse_files.py ${energy_dir}

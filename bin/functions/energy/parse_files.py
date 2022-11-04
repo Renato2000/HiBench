@@ -54,7 +54,7 @@ for host in hosts:
     it = 1
     acc = 0
     for i in range(lowest, highest + 1000, 1000):
-        if i in data[host]:
+        if i in data[host] and data[host][i]['value'] >= 0:
             acc = acc + data[host][i]['value']
             valid += 1
         if it % 5 == 0:

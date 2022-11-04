@@ -27,6 +27,7 @@ show_bannar start
 rmr_hdfs $OUTPUT_HDFS || true
 
 SIZE=`dir_size $INPUT_HDFS`
+rm ${energy_dir}/*.csv
 ansible-playbook ${energy_dir}/start_powerjoular.yml -i ${energy_dir}/hosts.inv > /dev/null
 START_TIME=`timestamp`
 run_spark_job com.intel.hibench.sparkbench.micro.ScalaWordCount $INPUT_HDFS $OUTPUT_HDFS

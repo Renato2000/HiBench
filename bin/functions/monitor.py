@@ -798,7 +798,7 @@ def generate_report(workload_title, log_fn, benchlog_fn, report_fn):
     variables = locals()
     def my_replace(match):
         match = match.group()[1:-1]
-        if match.endswith('heatmap') or match.endswith('overall'):
+        if (match.endswith('heatmap') or match.endswith('overall')) and not match.startswith('energy'):
             return "\n".join(variables[match])
         elif match =='events':
             return "\n".join(events)
