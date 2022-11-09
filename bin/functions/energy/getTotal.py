@@ -9,6 +9,8 @@ for file in os.listdir(os.getcwd()):
     if len(matches) == 1:
         hosts.append(matches[0])
 
+hosts.reverse()
+
 host = hosts[int(sys.argv[1])]
 f = open("energy_" + host + ".csv")
 
