@@ -6,6 +6,9 @@ hibench.spark.home      /PATH/TO/YOUR/SPARK/HOME
 #   YARN mode: yarn-client
 hibench.spark.master    yarn-client
 
+# scheduler mode
+spark.scheduler.mode FIFO
+
 # executor number and cores when running on Yarn
 hibench.yarn.executor.num     2
 hibench.yarn.executor.cores   4

@@ -48,6 +48,7 @@ object SparkPageRank {
     val output_path = args(1)
     val iters = if (args.length > 2) args(2).toInt else 10
     val ctx = new SparkContext(sparkConf)
+    ctx.setLocalProperty("spark.scheduler.pool", "fair_pool")
 
 //  Modified by Lv: accept last two values from HiBench generated PageRank data format
     val lines = ctx.textFile(input_path, 1)

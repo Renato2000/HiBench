@@ -43,6 +43,7 @@ object ScalaTeraSort {
     }
     val sparkConf = new SparkConf().setAppName("ScalaTeraSort")
     val sc = new SparkContext(sparkConf)
+    sc.setLocalProperty("spark.scheduler.pool", "fair_pool")
     val io = new IOCommon(sc)
 
     //val file = io.load[String](args(0), Some("Text"))
