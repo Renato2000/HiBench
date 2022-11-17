@@ -25,7 +25,7 @@ show_bannar start
 
 rmr_hdfs $OUTPUT_HDFS || true
 
-SIZE=`dir_size $INPUT_HDFS
+SIZE=`dir_size $INPUT_HDFS`
 START_TIME=`timestamp`
 run_spark_job com.intel.hibench.sparkbench.micro.ScalaSort $INPUT_HDFS $OUTPUT_HDFS
 END_TIME=`timestamp`

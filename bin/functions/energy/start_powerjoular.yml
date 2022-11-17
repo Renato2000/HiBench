@@ -4,6 +4,12 @@
   remote_user: gsd
   
   tasks:
+  - name: make sure service is not running
+    become: yes
+    ansible.builtin.service:
+        name: powerjoular.service
+        state: stopped
+        
   - name: Remove energy file
     become: yes
     ansible.builtin.file:

@@ -63,14 +63,14 @@ function timestamp(){		# get current timestamp
 
 function start_monitor(){
     rm ${WORKLOAD_RESULT_FOLDER}/*.csv
-    ansible-playbook ${WORKLOAD_RESULT_FOLDER}/../../../bin/functions/energy/start_powerjoular.yml -i ${energy_dir}/hosts.inv -e "ansible_become_password=123456" > /dev/null
+    ansible-playbook ${WORKLOAD_RESULT_FOLDER}/../../../bin/functions/energy/start_powerjoular.yml -i ${WORKLOAD_RESULT_FOLDER}/../../../bin/functions/energy/hosts.inv -e "ansible_become_password=123456" > /dev/null
     MONITOR_PID=`${workload_func_bin}/monitor.py ${HIBENCH_CUR_WORKLOAD_NAME} $$ ${WORKLOAD_RESULT_FOLDER}/monitor.log ${WORKLOAD_RESULT_FOLDER}/bench.log ${WORKLOAD_RESULT_FOLDER}/energy.csv ${WORKLOAD_RESULT_FOLDER}/overall.csv ${WORKLOAD_RESULT_FOLDER}/monitor.html ${SLAVES} &`
 #    echo "start monitor, got child pid:${MONITOR_PID}" > /dev/stderr
     echo ${MONITOR_PID}
 }
 
 function stop_monitor(){
-    ansible-playbook ${WORKLOAD_RESULT_FOLDER}/../../../bin/functions/energy/stop_powerjoular.yml -i ${energy_dir}/hosts.inv -e "ansible_become_password=123456" > /dev/null
+    ansible-playbook ${WORKLOAD_RESULT_FOLDER}/../../../bin/functions/energy/stop_powerjoular.yml -i ${WORKLOAD_RESULT_FOLDER}/../../../bin/functions/energy/hosts.inv -e "ansible_become_password=123456" > /dev/null
     MONITOR_PID=$1
     assert $1 "monitor pid missing"
 #    echo "stop monitor, kill ${MONITOR_PID}" > /dev/stderr

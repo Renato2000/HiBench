@@ -15,8 +15,6 @@ for file in os.listdir(current_dir):
     if len(matches) == 1:
         hosts.append(matches[0])
 
-hosts.reverse()
-
 # parse data
 hostno = 0
 tot = 0
