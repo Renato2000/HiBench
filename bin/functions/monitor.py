@@ -613,6 +613,8 @@ def generate_report(workload_title, log_fn, benchlog_fn, report_fn):
     # Generating CSVs
     cpu_heatmap = ["x,y,value,hostname,coreid"]
     cpu_overall = ["x,idle,user,system,iowait,others"]
+    energy_heatmap = ["x,y,value,hostname"]
+    energy_overall = ["x,value"]
     network_heatmap = ["x,y,value,hostname,adapterid"]
     network_overall = ["x,recv_bytes,send_bytes,|recv_packets,send_packets,errors"]
     diskio_heatmap = ["x,y,value,hostname,diskid"]
@@ -796,17 +798,20 @@ def generate_report(workload_title, log_fn, benchlog_fn, report_fn):
                                                host  = x['hostname'], 
                                                networkid = y.label+".send"))
 
-    #energy_data = open(samedir("energy/energy.csv"))
-    #for energy_data_line in energy_data.readlines():
-    #    log(energy_data_line.replace("\n", ""))
+    energy_data = open(energy_path)
+    for energy_data_line in energy_data.readlines():
+        energy_heatmap.append(energy_data_line.replace("\n", ""))
 
+    energy_overall_data = open(energy_overall_path)
+    for energy_overall_data_line in energy_overall_data.readlines():
+        energy_overall.append(energy_overall_data_line.replace("\n", ""))
     with open(samedir("chart-template.html")) as f:
         template = f.read()
     
     variables = locals()
     def my_replace(match):
         match = match.group()[1:-1]
-        if (match.endswith('heatmap') or match.endswith('overall')) and not match.startswith('energy'):
+        if (match.endswith('heatmap') or match.endswith('overall')):
             return "\n".join(variables[match])
         elif match =='events':
             return "\n".join(events)
@@ -843,8 +848,10 @@ if __name__=="__main__":
     parent_pid = sys.argv[2]
     log_path = sys.argv[3]
     bench_log_path = sys.argv[4]
-    report_path = sys.argv[5]
-    nodes_to_monitor = sys.argv[6:]
+    energy_path = sys.argv[5]
+    energy_overall_path = sys.argv[6]
+    report_path = sys.argv[7]
+    nodes_to_monitor = sys.argv[8:]
     pid=os.fork()
     if pid:                               #parent
         print pid

@@ -19,7 +19,6 @@ current_dir=`cd "$current_dir"; pwd`
 root_dir=${current_dir}/../../../../..
 workload_config=${root_dir}/conf/workloads/micro/terasort.conf
 . "${root_dir}/bin/functions/load_bench_config.sh"
-energy_dir=${root_dir}/bin/functions/energy
 
 enter_bench ScalaSparkTerasort ${workload_config} ${current_dir}
 show_bannar start
@@ -27,16 +26,11 @@ show_bannar start
 rmr_hdfs $OUTPUT_HDFS || true
 
 SIZE=`dir_size $INPUT_HDFS`
-rm ${energy_dir}/*.csv
-ansible-playbook ${energy_dir}/start_powerjoular.yml -i ${energy_dir}/hosts.inv -e "ansible_become_password=123456" > /dev/null
 START_TIME=`timestamp`
 run_spark_job com.intel.hibench.sparkbench.micro.ScalaTeraSort $INPUT_HDFS $OUTPUT_HDFS
 END_TIME=`timestamp`
-ansible-playbook ${energy_dir}/stop_powerjoular.yml -i ${energy_dir}/hosts.inv -e "ansible_become_password=123456" > /dev/null
-. ${energy_dir}/gen_energy_results.sh
-TOTAL_ENERGY=0
 
-gen_report ${START_TIME} ${END_TIME} ${SIZE} ${TOTAL_ENERGY}
+gen_report ${START_TIME} ${END_TIME} ${SIZE}
 show_bannar finish
 leave_bench
 
