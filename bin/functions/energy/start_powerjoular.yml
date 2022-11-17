@@ -7,9 +7,11 @@
   - name: Remove energy file
     become: yes
     ansible.builtin.file:
-      path: /home/gsd/energy.csv
-      state: absent
+        path: /tmp/powerjoular-service.csv
+        state: absent
 
-  - name: run powerjoular on background
+  - name: Start powerjoular service
     become: yes
-    shell: nohup powerjoular -f energy.csv &
+    ansible.builtin.service:
+        name: powerjoular.service
+        state: started

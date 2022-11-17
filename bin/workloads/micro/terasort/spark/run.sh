@@ -28,11 +28,11 @@ rmr_hdfs $OUTPUT_HDFS || true
 
 SIZE=`dir_size $INPUT_HDFS`
 rm ${energy_dir}/*.csv
-ansible-playbook ${energy_dir}/start_powerjoular.yml -i ${energy_dir}/hosts.inv > /dev/null
+ansible-playbook ${energy_dir}/start_powerjoular.yml -i ${energy_dir}/hosts.inv -e "ansible_become_password=123456" > /dev/null
 START_TIME=`timestamp`
 run_spark_job com.intel.hibench.sparkbench.micro.ScalaTeraSort $INPUT_HDFS $OUTPUT_HDFS
 END_TIME=`timestamp`
-ansible-playbook ${energy_dir}/stop_powerjoular.yml -i ${energy_dir}/hosts.inv > /dev/null
+ansible-playbook ${energy_dir}/stop_powerjoular.yml -i ${energy_dir}/hosts.inv -e "ansible_become_password=123456" > /dev/null
 . ${energy_dir}/gen_energy_results.sh
 TOTAL_ENERGY=0
 

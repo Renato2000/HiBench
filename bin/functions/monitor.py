@@ -47,12 +47,16 @@ def sig_term_handler(signo, stack):
     global workload_title
     global bench_log_path
     global na
+    global parent_pid
 
     if not entered:
         entered=True            # FIXME: Not atomic
     else: return
 
     na.stop()
+    
+    while os.path.exists("/proc/%s" % parent_pid):
+            sleep(1)
     generate_report(workload_title, log_path, bench_log_path, report_path)
     sys.exit(0)
 
@@ -792,6 +796,10 @@ def generate_report(workload_title, log_fn, benchlog_fn, report_fn):
                                                host  = x['hostname'], 
                                                networkid = y.label+".send"))
 
+    #energy_data = open(samedir("energy/energy.csv"))
+    #for energy_data_line in energy_data.readlines():
+    #    log(energy_data_line.replace("\n", ""))
+
     with open(samedir("chart-template.html")) as f:
         template = f.read()
     
@@ -829,6 +837,7 @@ if __name__=="__main__":
     global workload_title
     global bench_log_path
     global na
+    global parent_pid
 
     workload_title = sys.argv[1]
     parent_pid = sys.argv[2]
@@ -842,7 +851,7 @@ if __name__=="__main__":
     else:                                 #child
         os.close(0)
         os.close(1)
-        os.close(2)
+#        os.close(2)
 #        log("child process start")
         signal.signal(signal.SIGTERM, sig_term_handler)
         start_monitor(log_path, nodes_to_monitor)

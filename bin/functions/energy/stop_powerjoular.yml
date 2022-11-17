@@ -4,6 +4,8 @@
   remote_user: gsd
   
   tasks:
-  - name: stop powerjoular
+  - name: stop powerjoular service
     become: yes
-    shell: sudo pkill powerjoular
+    ansible.builtin.service:
+        name: powerjoular.service
+        state: stopped
