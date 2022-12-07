@@ -2,9 +2,11 @@ import re
 import sys
 from datetime import datetime
 
-f = open("energy.csv")
+path = sys.argv[1]
 
-host = sys.argv[1]
+f = open(path + "/energy.csv")
+
+host = sys.argv[2]
 
 for line in f.readlines():
     l = line.split(",")
