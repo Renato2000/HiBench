@@ -1,6 +1,7 @@
 #!/bin/bash
 
-WORKLOADS="micro/wordcount micro/terasort micro/sort websearch/pagerank"
+#WORKLOADS="micro/terasort micro/sort websearch/pagerank"
+WORKLOADS="micro/sort"
 
 N_RUNS=5
 
@@ -8,7 +9,7 @@ RESULT_FILE="benchmark_result"
 
 rm $RESULT_FILE
 touch $RESULT_FILE
-echo "Workload   Energy   Time"
+echo "Workload   Energy   Time" >> $RESULT_FILE
 
 for WORKLOAD in $WORKLOADS; do
 	WORKLOAD_NAME=$(cut -d '/' -f 2 <<< $WORKLOAD)
@@ -31,7 +32,7 @@ for WORKLOAD in $WORKLOADS; do
 	AVERAGE_ENERGY=$(echo "$TOTAL_ENERGY / $N_RUNS" | bc -l)
 	AVERAGE_TIME=$(echo "$TOTAL_TIME / $N_RUNS" | bc -l)
 
-	LC_NUMERIC="en_US.UTF-8" printf "%s %.4f %.4f" $WORKLOAD_NAME $AVERAGE_ENERGY $AVERAGE_TIME >> $RESULT_FILE
+	LC_NUMERIC="en_US.UTF-8" printf "%s   %.4f   %.4f\n" $WORKLOAD_NAME $AVERAGE_ENERGY $AVERAGE_TIME >> $RESULT_FILE
 
 	hdfs dfs -rm -r /HiBench/${WORKLOAD_NAME^}/
 done
