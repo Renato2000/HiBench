@@ -2,8 +2,6 @@
 
 WORKERS="cloud135.cluster.lsd.di.uminho.pt cloud136.cluster.lsd.di.uminho.pt cloud138.cluster.lsd.di.uminho.pt"
 
-echo $WORKLOAD_RESULT_FOLDER
-
 current_dir=`dirname "$0"`
 current_dir=`cd "$current_dir"; pwd`
 root_dir=${current_dir}/../../../../../
@@ -16,3 +14,4 @@ for WORKER in $WORKERS; do
 done
 
 python3 ${energy_dir}/parse_files.py $WORKLOAD_RESULT_FOLDER
+

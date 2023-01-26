@@ -798,9 +798,15 @@ def generate_report(workload_title, log_fn, benchlog_fn, report_fn):
                                                host  = x['hostname'], 
                                                networkid = y.label+".send"))
 
+    while(not os.path.exists(energy_path)):
+        sleep(1)
+                                       
     energy_data = open(energy_path)
     for energy_data_line in energy_data.readlines():
         energy_heatmap.append(energy_data_line.replace("\n", ""))
+
+    while(not os.path.exists(energy_overall_path)):
+        sleep(1)
 
     energy_overall_data = open(energy_overall_path)
     for energy_overall_data_line in energy_overall_data.readlines():

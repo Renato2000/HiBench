@@ -1,0 +1,4 @@
+Workload   Avg_Energy   Avg_Time
+terasort   24177.2690   248.4516
+sort   11171.2625   102.3140
+pagerank   114674.2334   988.7118

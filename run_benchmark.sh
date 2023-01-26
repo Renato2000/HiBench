@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#WORKLOADS="micro/terasort micro/sort websearch/pagerank"
-WORKLOADS="micro/sort"
+WORKLOADS="micro/terasort micro/sort websearch/pagerank"
+#WORKLOADS="websearch/pagerank"
 
 N_RUNS=5
 
@@ -9,7 +9,7 @@ RESULT_FILE="benchmark_result"
 
 rm $RESULT_FILE
 touch $RESULT_FILE
-echo "Workload   Energy   Time" >> $RESULT_FILE
+echo "Workload   Avg_Energy   Avg_Time" >> $RESULT_FILE
 
 for WORKLOAD in $WORKLOADS; do
 	WORKLOAD_NAME=$(cut -d '/' -f 2 <<< $WORKLOAD)
