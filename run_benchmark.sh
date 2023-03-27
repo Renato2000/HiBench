@@ -1,9 +1,9 @@
 #!/bin/bash
 
 WORKLOADS="micro/terasort micro/sort websearch/pagerank"
-#WORKLOADS="websearch/pagerank"
+#WORKLOADS="micro/wordcount"
 
-N_RUNS=5
+N_RUNS=1
 
 RESULT_FILE="benchmark_result"
 
