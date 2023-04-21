@@ -11,7 +11,6 @@ for file in os.listdir(path):
     if len(matches) == 1:
         hosts.append(matches[0])
 
-
 total = 0
 
 for host in hosts:
@@ -27,4 +26,3 @@ for host in hosts:
         index += 1
 
 print(str(round(total, 4)))
-
