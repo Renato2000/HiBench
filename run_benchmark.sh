@@ -1,7 +1,7 @@
 #!/bin/bash
 
-WORKLOADS="micro/terasort micro/sort websearch/pagerank"
-#WORKLOADS="micro/terasort"
+#WORKLOADS="micro/terasort micro/sort websearch/pagerank"
+WORKLOADS="websearch/pagerank"
 
 N_RUNS=1
 
@@ -9,6 +9,7 @@ RESULT_FILE="benchmark_result"
 EVENT_LOGS_FOLDER="/tmp/spark-events"
 
 rm $RESULT_FILE
+rm -rf $EVENT_LOGS_FOLDER
 touch $RESULT_FILE
 mkdir $EVENT_LOGS_FOLDER
 echo "Workload   Avg_Energy   Avg_Time" >> $RESULT_FILE
