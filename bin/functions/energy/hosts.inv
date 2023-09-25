@@ -1,7 +1,5 @@
-[main]
-cloud105.cluster.lsd.di.uminho.pt
-
 [workers]
-cloud135.cluster.lsd.di.uminho.pt 
-cloud136.cluster.lsd.di.uminho.pt
-cloud138.cluster.lsd.di.uminho.pt 
+192.168.112.138
+
+[main]
+main_node ansible_host=cloud105.cluster.lsd.di.uminho.pt

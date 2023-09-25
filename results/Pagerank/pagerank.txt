@@ -1,0 +1,420 @@
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 1
+Frequency: 0.8
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1182.2187      575.7940       24.5788       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 1
+Frequency: 1.2
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1070.2344      416.0905       12.9919       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 1
+Frequency: 2.3
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1232.5235      237.4543       12.7527       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 1
+Frequency: 3.4
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1586.8750      176.2805       13.4776       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 1
+Frequency: 4.6
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       2910.7500      146.3463       13.9408       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 2
+Frequency: 0.8
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1011.0469      353.9607       23.8890       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 2
+Frequency: 1.2
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       954.3828       252.5125       25.7640       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 2
+Frequency: 2.3
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1143.6172      150.0635       26.1698       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 2
+Frequency: 3.4
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1539.3750      111.4680       26.1529       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 2
+Frequency: 4.6
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       2641.5000      93.1420        25.1119       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 3
+Frequency: 0.8
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       967.8984       302.6545       29.6742       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 3
+Frequency: 1.2
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       960.8594       221.4460       33.8682       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 3
+Frequency: 2.3
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1200.4219      131.2880       33.4950       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 3
+Frequency: 3.4
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1635.0547      100.0165       33.3369       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 3
+Frequency: 4.6
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       2827.6134      85.5238        32.9069       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 4
+Frequency: 0.8
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       962.8987       262.9420       42.1270       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 4
+Frequency: 1.2
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       926.5139       184.9688       44.1344       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 4
+Frequency: 2.3
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1233.7951      111.4680       44.4066       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 4
+Frequency: 3.4
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1692.9942      86.7405        43.9799       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 4
+Frequency: 4.6
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       3041.5041      77.4395        43.1367       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 5
+Frequency: 0.8
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       950.8326       255.9558       44.2035       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 5
+Frequency: 1.2
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       930.0668       183.1807       44.4845       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 5
+Frequency: 2.3
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1246.0745      113.4938       44.7704       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 5
+Frequency: 3.4
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1774.5275      90.0280        45.5475       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 5
+Frequency: 4.6
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       3188.5704      80.0568        45.2516       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 6
+Frequency: 0.8
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1034.7544      281.1938       46.4678       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 6
+Frequency: 1.2
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       980.5081       192.3158       46.5731       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 6
+Frequency: 2.3
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1277.5080      114.6430       46.3981       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 6
+Frequency: 3.4
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1818.7814      91.1007        46.2823       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 6
+Frequency: 4.6
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       3140.6525      79.5898        47.1090       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 7
+Frequency: 0.8
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1010.0669      270.9372       48.0643       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 7
+Frequency: 1.2
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       988.8207       195.1700       46.3446       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 7
+Frequency: 2.3
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1306.0939      118.8863       48.0033       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 7
+Frequency: 3.4
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1787.2189      91.0612        48.5291       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 7
+Frequency: 4.6
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       3197.4103      80.6920        50.0802       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 8
+Frequency: 0.8
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       983.5238       233.7760       57.8292       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 8
+Frequency: 1.2
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1004.4376      176.9128       60.9757       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 8
+Frequency: 2.3
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1340.2500      106.1208       60.1767       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 8
+Frequency: 3.4
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1852.0312      81.6405        59.9692       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 8
+Frequency: 4.6
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       3414.4453      78.6808        61.5667       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 9
+Frequency: 0.8
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       972.1484       231.8813       60.0681       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 9
+Frequency: 1.2
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       988.0860       170.1065       59.6390       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 9
+Frequency: 2.3
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1311.0078      104.4890       60.0247       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 9
+Frequency: 3.4
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1845.7578      80.8938        59.6934       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 9
+Frequency: 4.6
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       3402.5625      76.4405        61.2014       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 10
+Frequency: 0.8
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       981.1875       233.5965       61.3273       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 10
+Frequency: 1.2
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1033.4688      178.3125       59.6253       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 10
+Frequency: 2.3
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1308.6250      103.0380       58.9369       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 10
+Frequency: 3.4
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1857.2422      81.1927        60.4706       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 10
+Frequency: 4.6
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       3438.1562      77.1420        61.9657       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 11
+Frequency: 0.8
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       978.1797       234.0860       61.1874       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 11
+Frequency: 1.2
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1010.0469      175.9167       60.5651       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 11
+Frequency: 2.3
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1296.8790      102.3022       59.9010       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 11
+Frequency: 3.4
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1873.4571      82.0052        60.9122       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 11
+Frequency: 4.6
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       3423.0041      76.9845        61.6199       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 12
+Frequency: 0.8
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       984.7272       237.0415       60.8389       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 12
+Frequency: 1.2
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1000.0785      173.0193       59.5867       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 12
+Frequency: 2.3
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1306.7737      103.1605       60.1513       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 12
+Frequency: 3.4
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       1839.0432      81.9465        59.6101       
+---------------------------------------------------------
+Hosts:  192.168.112.138
+Cores per executor: 12
+Frequency: 4.6
+
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+pagerank       3333.6330      74.8490        61.8188       

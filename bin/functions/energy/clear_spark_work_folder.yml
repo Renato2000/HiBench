@@ -1,0 +1,8 @@
+---
+- name: clear spark work folder
+  hosts: workers
+  remote_user: gsd
+
+  tasks:
+    - name: delete all files
+      shell: rm -rf /usr/local/spark/work/*

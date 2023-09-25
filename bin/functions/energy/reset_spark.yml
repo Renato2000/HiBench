@@ -1,0 +1,9 @@
+---
+- name: reset spark
+  hosts: all
+  remote_user: gsd
+
+  tasks:
+    - name: stop spark
+      shell: pkill -f spark
+      ignore_errors: yes

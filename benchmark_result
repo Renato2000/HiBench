@@ -1,2 +1,2 @@
-Workload   Avg_Energy   Avg_Time
-pagerank   3409.2970   75.0400
+Workload       Avg_Energy     Avg_Time       Avg_CPU(%)    
+terasort       2056.8595      50.6103        51.8921       

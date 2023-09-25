@@ -1,0 +1,26 @@
+---
+- name: reset hadoop
+  hosts: all
+  remote_user: gsd
+
+  tasks:
+    - name: stop hdfs
+      shell: pkill -f hadoop
+      ignore_errors: yes
+
+    - name: clear temp
+      become: yes
+      ansible.builtin.file:
+        path: /tmp/
+        state: absent
+
+    - name: create tmp folder
+      become: yes
+      ansible.builtin.file:
+        path: /tmp
+        state: directory
+        mode: '777'
+
+    - name: reformat nodes
+      shell: echo 'y' | /usr/local/hadoop/bin/hadoop namenode -format
+

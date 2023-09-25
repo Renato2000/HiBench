@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WORKERS="cloud135.cluster.lsd.di.uminho.pt cloud136.cluster.lsd.di.uminho.pt cloud138.cluster.lsd.di.uminho.pt"
+WORKERS=" 192.168.112.138"
 
 current_dir=`dirname "$0"`
 current_dir=`cd "$current_dir"; pwd`
